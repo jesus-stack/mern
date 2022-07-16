@@ -1,0 +1,10 @@
+body{
+   background: url('./imagenes/bg-angry.jpg') no-repeat;
+    background-size: cover;
+}
+
+#app{
+    background: url('./imagenes/jimmy.jpeg') no-repeat;
+    background-size: contain;
+    background-position: 100%;
+}

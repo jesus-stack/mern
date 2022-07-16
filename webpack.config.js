@@ -9,7 +9,11 @@ module.exports = {
             {
                 use:{loader: 'babel-loader'},
                 test: /\.js$/,
-                exclude: /node_modules/
+                exclude: /node_modules|hojas-de-estilo/
+            }, {
+                use:['style-loader','css-loader'],
+                test: /\.css$/,
+                
             }
         ]
     }

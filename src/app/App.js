@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './hojas-de-estilo/App.css'
 
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
       this.addTask= this.addTask.bind(this);
       this.handleChange= this.handleChange.bind(this);
     }
-    label='SAVE';
+    label='Guardar';
     addTask(e) {
         if(this.state.title.length>0&&this.state.description.length>0)
         {if(this.state._id){
@@ -29,7 +30,7 @@ class App extends Component {
             .then(res => res.json()
             .then(data => {
                 console.log(data);
-                M.toast({html:'Task Updated'});
+                M.toast({html:'Regalo Editado'});
                 this.setState({
                     title:'',
                     description:'',
@@ -52,7 +53,7 @@ class App extends Component {
             .then(res => res.json()
             .then(data => {
                 console.log(data);
-                M.toast({html:'Task Saved'});
+                M.toast({html:'Regalo Guardado'});
                 this.setState({
                     title:'',
                     description:''
@@ -89,11 +90,11 @@ class App extends Component {
     }
     
     deleteTask (id) {
-        if(confirm('Are you sure you want to delete it')){
+        if(confirm('Estas seguro de eliminarlo?')){
             fetch(`/api/tasks/${id}`,{method:'DELETE'})
         .then(res => res.json()
         .then(data => {
-            M.toast({html:'Task Deleted'});
+            M.toast({html:'Regalo Eliminado'});
             this.fetchTasks();
         }));
         }
@@ -106,7 +107,7 @@ class App extends Component {
             this.setState({title:data.title,
             description:data.description,
         _id: data._id})
-        this.label='UPDATE';
+        this.label='Editar';
             
         }));
     }
@@ -116,9 +117,9 @@ class App extends Component {
                 <div>
                     {/*NAVIGATION */}
                     <nav
-                    className='light-blue darken-4'>
+                    className='red darken-4'>
                         <div className='container'>
-                            <a className='brand-logo' href='/'>MERN Stack</a>
+                            <a className='brand-logo' href='/'>Regalos de JIMMY</a>
                         </div>
                         </nav>
                         <div className='container'>
@@ -128,15 +129,16 @@ class App extends Component {
                                         <div className='card-content'>
                                             <form onSubmit={this.addTask}>
                                                 <div className='row'>
-                                                    <div className='input-field col s12'>
+                                                    <div className='  input-field col s12'>
                                                         <input name='title' type='text'
-                                                        placeholder='Task Tittle' 
+                                                        placeholder='Nombre Regalo' 
                                                         onChange={this.handleChange} 
-                                                        value={this.state.title}/>
+                                                        value={this.state.title}
+                                                        className='entrada'/>
                                                     </div>
                                                     <div className='input-field col s12'>
                                                         <textarea type='text'
-                                                        placeholder='Task Description' className='materialize-textarea'
+                                                        placeholder='Descripcion Regalo' className='entrada materialize-textarea'
                                                         name='description' onChange={this.handleChange}
                                                         value={this.state.description}/>
                                                     </div>
@@ -146,12 +148,12 @@ class App extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='col s7'>
+                                <div className='col s7 gift-list'>
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th>Title</th>
-                                                <th>Description</th>
+                                                <th>Regalo</th>
+                                                <th>Descripcion</th>
                                             </tr>
                                         </thead>
                                         <tbody>
