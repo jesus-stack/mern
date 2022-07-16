@@ -118,8 +118,8 @@ class App extends Component {
                     {/*NAVIGATION */}
                     <nav
                     className='red darken-4'>
-                        <div className='container'>
-                            <a className='brand-logo' href='/'>Regalos de JIMMY</a>
+                        <div className='nav-wrapper'>
+                            <a className='brand-logo col s12' href='/'>Regalos</a>
                         </div>
                         </nav>
                         <div className='container'>
@@ -131,14 +131,14 @@ class App extends Component {
                                                 <div className='row'>
                                                     <div className='  input-field col s12'>
                                                         <input name='title' type='text'
-                                                        placeholder='Nombre Regalo' 
+                                                        placeholder='Regalo ' 
                                                         onChange={this.handleChange} 
                                                         value={this.state.title}
                                                         className='entrada'/>
                                                     </div>
                                                     <div className='input-field col s12'>
                                                         <textarea type='text'
-                                                        placeholder='Descripcion Regalo' className='entrada materialize-textarea'
+                                                        placeholder='Descripcion' className='entrada materialize-textarea'
                                                         name='description' onChange={this.handleChange}
                                                         value={this.state.description}/>
                                                     </div>
