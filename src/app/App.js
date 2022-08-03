@@ -117,7 +117,7 @@ class App extends Component {
                 <div>
                     {/*NAVIGATION */}
                     <nav
-                    className='red darken-4'>
+                    className='blue darken-4'>
                         <div className='nav-wrapper'>
                             <a className='brand-logo col s12' href='/'>Regalos</a>
                         </div>
